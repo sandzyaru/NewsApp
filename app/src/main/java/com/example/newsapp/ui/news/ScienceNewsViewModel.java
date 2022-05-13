@@ -12,15 +12,15 @@ import javax.inject.Inject;
 import dagger.hilt.android.lifecycle.HiltViewModel;
 
 @HiltViewModel
-public class NewsViewModel extends ViewModel {
+public class ScienceNewsViewModel extends ViewModel {
     private NewsRepositoriesImpl repositories;
     public LiveData<Resource<MainResponse>> liveData;
     @Inject
-    public NewsViewModel(NewsRepositoriesImpl repositories) {
+    public ScienceNewsViewModel(NewsRepositoriesImpl repositories) {
         this.repositories = repositories;
     }
-    public  void getTopNews() {
-        liveData = repositories.getTopNews();
+    public  void getScienceNews() {
+        liveData = repositories.getScienceNews();
     }
 
 }

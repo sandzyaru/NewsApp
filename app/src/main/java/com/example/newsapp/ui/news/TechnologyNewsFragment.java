@@ -7,6 +7,7 @@ import com.example.newsapp.base.BaseFragment;
 import com.example.newsapp.common.Resource;
 import com.example.newsapp.data.model.MainResponse;
 import com.example.newsapp.databinding.FragmentTechnologyNewsBinding;
+import com.example.newsapp.ui.news.view.TechnologyNewsViewModel;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -14,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
 public class TechnologyNewsFragment  extends BaseFragment<FragmentTechnologyNewsBinding> {
-    private  NewsViewModel viewModel;
+    private  TechnologyNewsViewModel viewModel;
     private NewsAdapter adapter;
     @Override
     protected FragmentTechnologyNewsBinding bind() {
@@ -24,7 +25,7 @@ public class TechnologyNewsFragment  extends BaseFragment<FragmentTechnologyNews
     @Override
     protected void setupViews() {
         viewModel = new ViewModelProvider(requireActivity())
-                .get(NewsViewModel.class);
+                .get(TechnologyNewsViewModel.class);
         adapter = new NewsAdapter();
         binding.recycler.setAdapter(adapter);
     }

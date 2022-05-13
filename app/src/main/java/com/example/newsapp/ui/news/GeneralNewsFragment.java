@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
 public class GeneralNewsFragment extends BaseFragment<FragmentGeneralNewsBinding> {
-    private  NewsViewModel viewModel;
+    private  GeneralNewsViewModel viewModel;
     private NewsAdapter adapter;
     @Override
     protected FragmentGeneralNewsBinding bind() {
@@ -24,7 +24,7 @@ public class GeneralNewsFragment extends BaseFragment<FragmentGeneralNewsBinding
     @Override
     protected void setupViews() {
         viewModel = new ViewModelProvider(requireActivity())
-                .get(NewsViewModel.class);
+                .get(GeneralNewsViewModel.class);
         adapter = new NewsAdapter();
         binding.recycler.setAdapter(adapter);
     }

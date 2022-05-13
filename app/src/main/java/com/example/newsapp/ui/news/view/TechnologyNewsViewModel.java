@@ -1,4 +1,4 @@
-package com.example.newsapp.ui.news;
+package com.example.newsapp.ui.news.view;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
@@ -12,15 +12,15 @@ import javax.inject.Inject;
 import dagger.hilt.android.lifecycle.HiltViewModel;
 
 @HiltViewModel
-public class NewsViewModel extends ViewModel {
+public class TechnologyNewsViewModel extends ViewModel {
     private NewsRepositoriesImpl repositories;
     public LiveData<Resource<MainResponse>> liveData;
     @Inject
-    public NewsViewModel(NewsRepositoriesImpl repositories) {
+    public TechnologyNewsViewModel(NewsRepositoriesImpl repositories) {
         this.repositories = repositories;
     }
-    public  void getTopNews() {
-        liveData = repositories.getTopNews();
+    public  void getTechnologyNews() {
+        liveData = repositories.getTechnologyNews();
     }
 
 }

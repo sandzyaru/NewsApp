@@ -1,5 +1,6 @@
 package com.example.newsapp.ui.news;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -16,6 +17,7 @@ import java.util.List;
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
     private List<Article> newsList = new ArrayList<>();
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setNewsList(List<Article> newsList) {
         this.newsList = newsList;
         notifyDataSetChanged();
@@ -43,8 +45,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         return newsList.size();
     }
 
-    protected class NewsViewHolder extends RecyclerView.ViewHolder {
-        private ItemNewsBinding binding;
+    protected static class NewsViewHolder extends RecyclerView.ViewHolder {
+        private final ItemNewsBinding binding;
 
         public NewsViewHolder(@NonNull ItemNewsBinding binding) {
             super(binding.getRoot());
