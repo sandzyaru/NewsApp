@@ -1,4 +1,4 @@
-package com.example.newsapp.ui.news;
+package com.example.newsapp.ui.news.business;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -6,32 +6,33 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.newsapp.base.BaseFragment;
 import com.example.newsapp.common.Resource;
 import com.example.newsapp.data.model.MainResponse;
-import com.example.newsapp.databinding.FragmentEntertainmentNewsBinding;
+import com.example.newsapp.databinding.FragmentBusinessNewsBinding;
+import com.example.newsapp.ui.news.NewsAdapter;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
-public class EntertainmentNewsFragment extends BaseFragment<FragmentEntertainmentNewsBinding> {
-    private  EntertainmentNewsViewModel viewModel;
+public class BusinessNewsFragment extends BaseFragment<FragmentBusinessNewsBinding> {
+    private  BusinessNewsViewModel viewModel;
     private NewsAdapter adapter;
     @Override
-    protected FragmentEntertainmentNewsBinding bind() {
-        return FragmentEntertainmentNewsBinding.inflate(getLayoutInflater());
+    protected FragmentBusinessNewsBinding bind() {
+        return FragmentBusinessNewsBinding.inflate(getLayoutInflater());
     }
 
     @Override
     protected void setupViews() {
         viewModel = new ViewModelProvider(requireActivity())
-                .get(EntertainmentNewsViewModel.class);
+                .get(BusinessNewsViewModel.class);
         adapter = new NewsAdapter();
         binding.recycler.setAdapter(adapter);
     }
 
     @Override
     protected void callRequests() {
-        viewModel.getEntertainmentNews();
+        viewModel.getBusinessNews();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.newsapp.ui.news;
+package com.example.newsapp.ui.news.general;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -7,6 +7,7 @@ import com.example.newsapp.base.BaseFragment;
 import com.example.newsapp.common.Resource;
 import com.example.newsapp.data.model.MainResponse;
 import com.example.newsapp.databinding.FragmentGeneralNewsBinding;
+import com.example.newsapp.ui.news.NewsAdapter;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 

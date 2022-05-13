@@ -6,6 +6,14 @@ import androidx.annotation.NonNull;
 
 import com.example.newsapp.base.BaseFragment;
 import com.example.newsapp.databinding.FragmentNewsBinding;
+import com.example.newsapp.ui.news.business.BusinessNewsFragment;
+import com.example.newsapp.ui.news.entertainment.EntertainmentNewsFragment;
+import com.example.newsapp.ui.news.general.GeneralNewsFragment;
+import com.example.newsapp.ui.news.health.HealthNewsFragment;
+import com.example.newsapp.ui.news.science.ScienceNewsFragment;
+import com.example.newsapp.ui.news.sports.SportsNewsFragment;
+import com.example.newsapp.ui.news.technology.TechnologyNewsFragment;
+import com.example.newsapp.ui.news.top.TopNewsFragment;
 import com.example.newsapp.ui.news.view.Tabs;
 import com.example.newsapp.ui.news.view.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;

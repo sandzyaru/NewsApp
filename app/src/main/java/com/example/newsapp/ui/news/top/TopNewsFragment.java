@@ -1,4 +1,4 @@
-package com.example.newsapp.ui.news;
+package com.example.newsapp.ui.news.top;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -6,32 +6,33 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.newsapp.base.BaseFragment;
 import com.example.newsapp.common.Resource;
 import com.example.newsapp.data.model.MainResponse;
-import com.example.newsapp.databinding.FragmentScienceNewsBinding;
+import com.example.newsapp.databinding.FragmentTopNewsBinding;
+import com.example.newsapp.ui.news.NewsAdapter;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
-public class ScienceNewsFragment extends BaseFragment<FragmentScienceNewsBinding> {
-    private  ScienceNewsViewModel viewModel;
+public class TopNewsFragment extends BaseFragment<FragmentTopNewsBinding> {
+    private  NewsViewModel viewModel;
     private NewsAdapter adapter;
     @Override
-    protected FragmentScienceNewsBinding bind() {
-        return FragmentScienceNewsBinding.inflate(getLayoutInflater());
+    protected FragmentTopNewsBinding bind() {
+        return FragmentTopNewsBinding.inflate(getLayoutInflater());
     }
 
     @Override
     protected void setupViews() {
         viewModel = new ViewModelProvider(requireActivity())
-                .get(ScienceNewsViewModel.class);
+                .get(NewsViewModel.class);
         adapter = new NewsAdapter();
         binding.recycler.setAdapter(adapter);
     }
 
     @Override
     protected void callRequests() {
-        viewModel.getScienceNews();
+        viewModel.getTopNews();
     }
 
     @Override

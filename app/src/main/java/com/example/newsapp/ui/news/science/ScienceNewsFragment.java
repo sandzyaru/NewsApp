@@ -1,4 +1,4 @@
-package com.example.newsapp.ui.news;
+package com.example.newsapp.ui.news.science;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -6,33 +6,33 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.newsapp.base.BaseFragment;
 import com.example.newsapp.common.Resource;
 import com.example.newsapp.data.model.MainResponse;
-import com.example.newsapp.databinding.FragmentTechnologyNewsBinding;
-import com.example.newsapp.ui.news.view.TechnologyNewsViewModel;
+import com.example.newsapp.databinding.FragmentScienceNewsBinding;
+import com.example.newsapp.ui.news.NewsAdapter;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
-public class TechnologyNewsFragment  extends BaseFragment<FragmentTechnologyNewsBinding> {
-    private  TechnologyNewsViewModel viewModel;
+public class ScienceNewsFragment extends BaseFragment<FragmentScienceNewsBinding> {
+    private  ScienceNewsViewModel viewModel;
     private NewsAdapter adapter;
     @Override
-    protected FragmentTechnologyNewsBinding bind() {
-        return FragmentTechnologyNewsBinding.inflate(getLayoutInflater());
+    protected FragmentScienceNewsBinding bind() {
+        return FragmentScienceNewsBinding.inflate(getLayoutInflater());
     }
 
     @Override
     protected void setupViews() {
         viewModel = new ViewModelProvider(requireActivity())
-                .get(TechnologyNewsViewModel.class);
+                .get(ScienceNewsViewModel.class);
         adapter = new NewsAdapter();
         binding.recycler.setAdapter(adapter);
     }
 
     @Override
     protected void callRequests() {
-        viewModel.getTechnologyNews();
+        viewModel.getScienceNews();
     }
 
     @Override
@@ -63,6 +63,5 @@ public class TechnologyNewsFragment  extends BaseFragment<FragmentTechnologyNews
                 }
             }
         });
-
     }
 }
